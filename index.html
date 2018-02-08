@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Gimme the money</title>
+</head>
+<body>
+    <header>
+        <h1>Gimme the money</h1>
+        <h2>The generator for creating your hard money question.</h2>
+        <p>More information/ a description right now</p>
+        <button>Create your U.O.Me here</button>
+    </header>
+    <main>
+        <div class="wrapper">
+            <form action="">
+                <div class="textInputs">
+                    <div class="name">
+                        <label class="question" for="person">Who owes you money?</label>
+                        <input type="text" id="person" placeholder="Gimme their name" name="name">
+                    </div>
+                    <div class="amount">
+                        <label class="question" for="number">How much money do they owe you?</label>
+                        <input type="number" id="number" value="0" min="0" placeholder="e.g. 100, 50, 10, 2, maybe let it go?" name="money">
+                    </div>
+                    <div class="reason">
+                        <label class="question" for="reason">What do they owe you money for?</label>
+                        <input type="text" id="reason" name="reason">
+                    </div>
+                </div>
+                <div class="buttonInputs">
+                    <div class="relationship questionWrapper">
+                        <p class="question">What is your relationship to this person?</p>
+                        <input type="radio" name="answerRelationship" id="relationshipFamily" value="family">
+                        <label class="button" for="relationshipFamily">Family</label>
+
+                        <input type="radio" name="answerRelationship"id="relationshipFriend" value="friend">
+                        <label class="button" for="relationshipFriend">Friend</label>
+
+                        <input type="radio" name="answerRelationship"id="relationshipAcquaintance" value="acquaintance">
+                        <label class="button" for="relationshipAcquaintance">Acquaintance</label>
+                    </div>
+                    <div class="history questionWrapper">
+                        <p class="question">How is your money history with this person?</p>
+                        <input type="radio"name="answerHistory" id="historyGood" value="firstTimeOffender" >
+                        <label class="button" for="historyGood">First time offender</label>
+                        <input type="radio"name="answerHistory" id="historyMedium" value="soSo">
+                        <label class="button" for="historyMedium">so-so</label>
+                        <input type="radio"name="answerHistory" id="historyBad" value="wallet">
+                        <label class="button" for="historyBad">We share a wallet</label>
+                    </div>
+                    <div class="humor">
+                        <p class="question">Humor to lighten the request?</p>
+                        <input class="humor1" type="radio" name="answerHumor" id="humorlow" value="humorLow">
+                        <label class="button" for="humorlow">Some</label>
+                        <input type="radio" name="answerHumor" id="humorMed" value="humorMed">
+                        <label class="button" for="humorMed">A little more</label>
+                        <input type="radio" name="answerHumor" id="humorHigh" value="humorHigh">
+                        <label class="button" for="humorHigh">Make em laugh</label>
+                    </div>
+                    <div class="opener">
+                        <p class="question">Add in an icebreaker?</p>
+                        <input type="radio" name="answerOpener" id="openerYes">
+                        <label class="button" for="openerYes">Why not!</label>
+                        <input type="radio" name="answerOpener" id="openerNo">
+                        <label class="button" for="openerNo">Get to the point.</label>
+                    </div>
+                </div>
+                <div class="formButtons">
+                    <button class="submit" type="submit" name="submit">Generate U.O.Me</button>
+                    <button class="reset" type="reset">Change of heart?</button>
+                </div>
+            </form>
+        </div>
+        <div class="answer">
+            <p class="output"></p>
+        </div>
+    </main>
+    <footer>
+        <ul class="mySocial">
+            <li><a href=""><i></i></a></li>
+            <li><a href=""><i></i></a></li>
+            <li><a href=""><i></i></a></li>
+        </ul>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
