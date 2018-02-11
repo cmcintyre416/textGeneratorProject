@@ -1,3 +1,4 @@
+
 // this is where my responses are
 // there is a response for each possibility
 
@@ -80,7 +81,7 @@ myGenerator.events = function(){
         if (money.length === 1) {
             money = 'the small amount you owe me';
         } else if (money.length === 0) {
-            money = '... im lying you actually owe me no money but'
+            money = 'the money'
         }
                 
 
@@ -117,14 +118,13 @@ myGenerator.events = function(){
         // console.log (generatedResponses);
 
 
-        $('.answer .output').html(`<p class="output">Hey ${personName}, I hope you are doing well. I'm reaching out since you haven't gotten back to me. ${generatedResponses} Please pay me ${money} for ${reason}.</p>`);
+        $('.answer .output').html(`<p class="output">Hey ${personName}, 
+        I hope you are doing well. I'm reaching out since you haven't gotten back to me. ${generatedResponses} Please pay me ${money} for ${reason}.</p>`);
         
         $('.answer .barTop .barTop__name').html(`<p class="barTop__name">${personName}</p>`);
        
         // here is the JS used for styling purposes 
-        // $('button').click(function(){
-        //     $(this).addClass('--active')
-        // });    
+ 
 
         // make the output disappear if the reset is clicked
         $('button.reset').on('click', function () {
@@ -135,27 +135,32 @@ myGenerator.events = function(){
             $('.answer .answer__wrapper .output').empty();
         });
 
+        $('button.tryAgain').on('click', function () {
+            $('.answer .answer__wrapper .output').empty();
+        });
 
+        // scroll down after the button is pressed to see result in iphone like screen
+        $('a').smoothScroll({
+            speed: 800
+        });
 
-        // if the addition of random responses is added might look like this
-        // function randomArray(array) {
-        //     const randomNumber = Math.floor(Math.random() * array.length);
-        //     return array[randomNumber];
-        // }
+        $('.header__button').on('click', function () {
+            $('html, body').animate({
+                scrollTop: $('#tryAgainScroll').offset().top
+            }, 600);
+        });
 
-        // let question1 = ['family', 'friend', 'coworker'];
-        // let question2 = ['firtTimeOffender', 'soSo', 'wallet'];
-        // let question3 = ['humorLow', 'humorMed', 'humorHigh'];
-        
-        // let relationshipRandom = randomInArray(question1);
+        $('.submit').on('click', function () {
+            $('html, body').animate({
+                scrollTop: $('#answer').offset().top
+            }, 600);
+        });
 
-        // let historyRandom = randomInArray(question2);
- 
-        // let humorRandom = randomInArray(question3);
-
-        // let excuseArray = myGenerator.mainResponse[relationshipRandom][historyRandom][humorRandom];
-
-
+        $('.tryAgain').on('click', function () {
+            $('html, body').animate({
+                scrollTop: $('#tryAgainScroll').offset().top
+            }, 600);
+        });
 
     });
 }
@@ -169,5 +174,3 @@ myGenerator.init = function() {
 $(function () {
     myGenerator.init();
 });
-
-

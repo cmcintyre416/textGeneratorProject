@@ -38,24 +38,14 @@ body {
     padding-top: 100px;
 }
 
+.header img {
+    width: 60%;
+}
+
 .header__aside {
     width: 50%;
 }
 
-.header__circle {
-    width: 500px;
-    height: 500px;
-    position: absolute;
-    z-index: -1;
-    background-color: white;
-    border-radius: 50%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-// .header__titles{
-    
-// }
 .header__h1 {
     font-size: 8rem;
     line-height: 100px;
@@ -107,6 +97,10 @@ body {
     color: rgb(41, 41, 41);
     text-decoration: none;
 };
+
+.nav__list li a:hover {
+    color: #79bd28;
+}
 
 .main {
     background-color: rgb(41, 41, 41);
@@ -195,6 +189,10 @@ input[type=text]:focus{
     border-bottom: 3px solid #ed5c5c; 
 }
 
+input[type=number]:focus {
+    border-bottom: 3px solid #ed5c5c;
+}
+
 .reason {
     display: flex;
     flex-direction: column;
@@ -249,6 +247,7 @@ input[type=text]:focus{
     border-radius: 15px;
     background-color: #ef6f6f;
     border: none;
+    color: white;
     border-bottom: 5px solid #ed5c5c;
 }
 
@@ -286,7 +285,7 @@ input {
     font-size: 1.8rem;
     border-radius: 15px;
     background-color: #a0d167;
-    color: white;
+    color: #292929;
     border: none;
     border-bottom: 10px solid #79bd28;
 }
@@ -390,8 +389,213 @@ input {
     padding: 5px;
     border-radius: 20px;
     min-height: 150px;
+    text-align: left;
 }
 
 .tryAgain {
     margin-top: 20px;
 }
+
+.tryAgain {
+    margin: 25px 20px;
+    padding: 18px 65px; 
+    font-size: 1.8rem;
+    border-radius: 15px;
+    background-color: #a0d167;
+    color: white;
+    border: none;
+    border-bottom: 10px solid #79bd28;
+}
+
+.tryAgain:active { 
+    margin-top: 30px;
+    padding: 18px 65px; 
+    font-size: 1.8rem;
+    border-radius: 15px;
+    background-color: #a0d167;
+    color: white;
+    border: none;
+    border-bottom: 5px solid #79bd28;
+}
+
+// media queries begin here
+
+
+// header media queries
+@media (max-width: 1300px) {
+    .header {
+        .header__h1 {
+            font-size: 6rem;
+        }
+        .header__money {
+            font-size: 10rem;
+        }
+        .header__h2 {
+            width: 100%;
+        }
+    }
+}
+@media (max-width: 1000px) {
+    .header {
+        .header__aside {
+            width: 40%;
+        }
+
+        .header__wrapper {
+            width: 95%;
+        }
+    }
+}
+
+@media (max-width: 850px) {
+        .header__wrapper {
+            flex-direction: column;
+            position: relative;
+            justify-content: space-around;
+        }
+        .header__mainContent {
+            width: 100%;
+        
+            h1.header__h1 {
+                font-size: 5rem;
+                line-height: 70px;
+                .header__money {
+                    font-size: 8rem;
+                    display: block;
+
+                }
+            }
+        }
+        .header__aside{
+            img {
+                width: 100%;
+                position: relative;
+                left: 30px;
+            }
+        }
+}
+
+@media (max-width: 400px) {
+    .header {
+        h1.header__h1 {
+            font-size: 4rem;
+            line-height: 50px;
+            .header__money {
+                font-size: 6rem;
+            }
+        }
+    }
+}
+
+@media (max-height: 650px) {
+    .header__aside {
+        img {
+            display: none;
+        }
+    }
+}
+
+// the main form area starts here 
+@media (max-width: 1200px) {
+    .main__wrapper {
+        width: 95%;
+    }
+    #reason {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 960px) {
+    .buttonInputs .history {
+        display: flex;
+        flex-direction: column;
+        label {
+            margin-bottom: 20px;
+        }
+    }
+
+}
+@media (max-width: 800px) {
+    .buttonInputs .humor {
+        display: flex;
+        flex-direction: column;
+        label {
+            margin-bottom: 20px;
+        }
+    }
+    .textInputs--row {
+        flex-direction: column;
+        .questionSection {
+            width: 100%;
+            input {
+                width: 60%;
+                margin: 0 auto;
+            }
+            .currencySign {
+                display: none;
+            }
+        }
+    }
+    .question {
+        padding-top: 30px;
+    }
+    .main .main__wrapper {
+        padding-top: 50px;
+    }
+
+    .relationship {
+        display: flex;
+        flex-direction: column;
+        label {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .button , .question {
+        width: 75%;
+        margin: 0 auto;
+    }
+    .question {
+        margin-bottom: 20px;
+    }
+    .main__wrapper {
+        justify-content: center;
+    }
+    .reason {
+        margin-bottom: 20px;
+    }
+
+    .formButtons {
+        margin: 50px 0;
+        flex-direction: column;
+        button {
+            width: 75%;
+            margin: 0 auto 20px;
+        }
+    }
+    .answer {
+        padding: 0 0 20px 0;
+    }
+}
+
+@media (max-width:400px) {
+    .main__wrapper {
+        .answer {
+            padding: 0;
+
+            .answer__wrapper {
+                width: 300px;
+                min-height: 500px;
+                padding-top: 100px;
+            }
+        
+            .tryAgain {
+                display: none;
+            }
+        }  
+    }
+}
+
