@@ -26,7 +26,7 @@
                 <div class="header__titles">
                     <h1 class="header__h1">gimme the <span class="header__money">money</span></h1>
                     <h2 class="header__h2">Generate your own personalized U. O. Me</h2>
-                    <button class="header__button">Create your U.O.Me here</button>
+                    <button class="header__button">  Create your U.O.Me</button>
                 </div>
             </div>
             <div class="header__aside">
@@ -48,24 +48,28 @@
     <main class="main">
         <div class="main__wrapper">
             <form action="">
-                <div class="textInputs">
-                    <div class="name">
+                <div class="textInputs--row">
+                    <div class="name questionSection">
                         <label class="question" for="person">Who owes you money?</label>
                         <input type="text" id="person" placeholder="Gimme their name" name="name">
                     </div>
-                    <div class="amount">
-                        <label class="question" for="number">How much money do they owe you?</label>
-                        <span class="currencySign">$
-                        </span> 
-                            <input class="currencyInput" type="number" id="number" min="0" placeholder="e.g. 100, 50, 10, 2, maybe let it go?" name="money">
+                    <div class="amount questionSection">
+                        <label class="question" for="number">How much do they owe?</label>
+                        <div>
+                            <span class="currencySign">$
+                            </span> 
+                            <input class="currencyInput" type="number" id="number" min="0" placeholder="e.g. 100, 50, 10" name="money">
+                        </div>
                     </div>
-                    <div class="reason">
+                </div>
+                <div class="textInput--full">
+                    <div class="reason questionSection">
                         <label class="question" for="reason">What do they owe you money for?</label>
-                        <input type="text" id="reason" name="reason">
+                        <input type="text" id="reason" name="reason" placeholder="for............">
                     </div>
                 </div>
                 <div class="buttonInputs">
-                    <div class="relationship questionWrapper">
+                    <div class="relationship questionSection">
                         <p class="question">What is your relationship to this person?</p>
                         <input type="radio" name="answerRelationship" id="relationshipFamily" value="family">
                         <label class="button" for="relationshipFamily">Family</label>
@@ -74,16 +78,16 @@
                         <input type="radio" name="answerRelationship"id="relationshipCoWorker" value="coWorker">
                         <label class="button" for="relationshipCoWorker">Co-worker</label>
                     </div>
-                    <div class="history">
+                    <div class="history questionSection">
                         <p class="question">How is your money history with this person?</p>
                         <input type="radio"name="answerHistory" id="historyGood" value="firstTimeOffender" >
                         <label class="button" for="historyGood">First time offender</label>
                         <input type="radio"name="answerHistory" id="historyMedium" value="soSo">
                         <label class="button" for="historyMedium">so-so</label>
                         <input type="radio"name="answerHistory" id="historyBad" value="wallet">
-                        <label class="button" for="historyBad">We share a wallet</label>
+                        <label class="button" for="historyBad">They think we share a wallet</label>
                     </div>
-                    <div class="humor">
+                    <div class="humor questionSection">
                         <p class="question">Humor to lighten the request?</p>
                         <input class="humor1" type="radio" name="answerHumor" id="humorlow" value="humorLow">
                         <label class="button" for="humorlow">Some</label>
@@ -92,22 +96,37 @@
                         <input type="radio" name="answerHumor" id="humorHigh" value="humorHigh">
                         <label class="button" for="humorHigh">Make em laugh</label>
                     </div>
-                    <div class="opener">
+                    <!-- <div class="opener questionSection">
                         <p class="question">Add in an icebreaker?</p>
                         <input type="radio" name="answerOpener" id="openerYes" value="1">
                         <label class="button" for="openerYes">Why not!</label>
                         <input type="radio" name="answerOpener" id="openerNo" value="0">
                         <label class="button" for="openerNo">Get to the point.</label>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="formButtons">
                     <button class="submit" type="submit" name="submit">Generate U.O.Me</button>
                     <button class="reset" type="reset">Change of heart?</button>
                 </div>
             </form>
-        </div>
-        <div class="answer">
-            <p class="output"></p>
+            <div class="answer">
+                <div class="answer__wrapper">
+                    <div class="barTop">
+                        <div class="circle"><span class="$$">$$</span></div>
+                        <p class="barTop__name"></p>
+                    </div>
+                    <div class="barBottom">
+                        <div class="messageBar"></div>
+                        <p class="send">send</p>
+                    </div>
+                    <div class="output__container">
+                        <p class="output"></p>
+                    </div>
+                </div>
+                <div>
+                   <button class="button tryAgain">Try Again</button>
+                </div>
+            </div>
         </div>
     </main>
     <footer>

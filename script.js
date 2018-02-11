@@ -3,7 +3,7 @@
 
 const myGenerator = {};
 
-myGenerator.icebreaker = ['IceBreaker 1', 'IceBreaker 2', 'IceBreaker 3']
+// myGenerator.icebreaker = ['IceBreaker 1', 'IceBreaker 2', 'IceBreaker 3']
 
 myGenerator.mainResponse = {
     family : {
@@ -96,6 +96,7 @@ myGenerator.events = function(){
         
         const relationship = $('input[name=answerRelationship]:checked').val();
 
+
         // the history question begins here
         
         const history = $('input[name=answerHistory]:checked').val();
@@ -107,9 +108,6 @@ myGenerator.events = function(){
         // the opener questions begin here
 
         // create a random number that can be used to
-        function randNum(n) {
-            return Math.floor(Math.random() * n + 1)
-        }
 
         const opener = $('input[name=answerOpener]:checked').val();
 
@@ -117,13 +115,47 @@ myGenerator.events = function(){
         let generatedResponses = myGenerator.mainResponse[relationship][history][humor];
 
         // console.log (generatedResponses);
-    
+
+
         $('.answer .output').html(`<p class="output">Hey ${personName}, I hope you are doing well. I'm reaching out since you haven't gotten back to me. ${generatedResponses} Please pay me ${money} for ${reason}.</p>`);
         
-        
-        // if ('person.length' && 'money.length' && 'reason.length' && 'relationship.length' && 'history.length' && 'humor.length' && 'opener.length' === 0){
-        //     $('.answer .output').html(`<p class="output">Gimme the money</p>`);
+        $('.answer .barTop .barTop__name').html(`<p class="barTop__name">${personName}</p>`);
+       
+        // here is the JS used for styling purposes 
+        // $('button').click(function(){
+        //     $(this).addClass('--active')
+        // });    
+
+        // make the output disappear if the reset is clicked
+        $('button.reset').on('click', function () {
+            $('.answer .barTop .barTop__name').empty();
+        });
+
+        $('button.reset').on('click', function () {
+            $('.answer .answer__wrapper .output').empty();
+        });
+
+
+
+        // if the addition of random responses is added might look like this
+        // function randomArray(array) {
+        //     const randomNumber = Math.floor(Math.random() * array.length);
+        //     return array[randomNumber];
         // }
+
+        // let question1 = ['family', 'friend', 'coworker'];
+        // let question2 = ['firtTimeOffender', 'soSo', 'wallet'];
+        // let question3 = ['humorLow', 'humorMed', 'humorHigh'];
+        
+        // let relationshipRandom = randomInArray(question1);
+
+        // let historyRandom = randomInArray(question2);
+ 
+        // let humorRandom = randomInArray(question3);
+
+        // let excuseArray = myGenerator.mainResponse[relationshipRandom][historyRandom][humorRandom];
+
+
 
     });
 }
